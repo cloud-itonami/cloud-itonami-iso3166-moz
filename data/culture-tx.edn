@@ -1,0 +1,14 @@
+;; data/culture-tx.edn — DataScript tx-data derived from src/culture/facts.cljc
+;; `culture.facts/catalog` (ADR-2607171400 addendum 2, Wave 1 country-level).
+;; Same shape across every cloud-itonami-iso3166-* sibling. Do not hand-edit;
+;; regenerate from the catalog.
+
+[
+#:culture{:id "moz.dish.matapa", :name "Matapa", :country "MOZ", :kind :dish, :summary "Typical Mozambican stew of young cassava, pumpkin or spinach leaves, ground and cooked with peanuts, tomatoes, garlic, onion and coconut milk, often served over rice.", :url "https://en.wikipedia.org/wiki/Matapa", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "moz.dish.xima", :name "Xima", :country "MOZ", :kind :dish, :summary "Mozambican name for a maize-based staple porridge known regionally across Africa as ugali, ugali's Names section lists \"Xima - Mozambique\" among local terms.", :url "https://en.wikipedia.org/wiki/Ugali", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "moz.dish.frango-a-zambeziana", :name "Frango à Zambeziana", :country "MOZ", :kind :dish, :summary "Spicy Mozambican chicken dish prepared with coconut milk, per the Mozambican cuisine article.", :url "https://en.wikipedia.org/wiki/Mozambican_cuisine", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "moz.product.piri-piri", :name "Piri piri", :country "MOZ", :kind :product, :summary "Capsicum frutescens cultivar whose name traces to the Ronga language of southern Mozambique, where Portuguese explorers developed the pepper; the piri-piri spelling is used in Portuguese-speaking countries including Mozambique.", :url "https://en.wikipedia.org/wiki/Piri_piri", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "moz.beverage.muchekele", :name "Muchekele", :country "MOZ", :kind :beverage, :summary "Cashew apple liquor distilled in Mozambique, the Mozambican variant of fermenting and distilling cashew apples into a traditional alcoholic beverage.", :url "https://en.wikipedia.org/wiki/Cashew", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "moz.craft.makonde-art", :name "Makonde art", :country "MOZ", :kind :craft, :summary "Woodcarving and sculpture tradition of the Makonde people of northern Mozambique and southern Tanzania; the first documented exhibition was held in Mozambique in the 1930s.", :url "https://en.wikipedia.org/wiki/Makonde_art", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "moz.heritage.island-of-mozambique", :name "Island of Mozambique", :country "MOZ", :kind :heritage, :summary "Historically significant island off Mozambique's northeastern coast that served as the capital of Portuguese East Africa until 1898, inscribed as a UNESCO World Heritage Site in 1991.", :url "https://en.wikipedia.org/wiki/Island_of_Mozambique", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+]
