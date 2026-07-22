@@ -1,0 +1,47 @@
+(ns marketentry.facts-test
+  (:require [clojure.test :refer [deftest is testing]]
+            [marketentry.facts :as facts]))
+
+(deftest moz-has-spec-basis
+  (let [sb (facts/spec-basis "MOZ")]
+    (is (some? sb))
+    (is (string? (:provenance sb)))
+    (is (seq (:required-evidence sb)))
+    (is (= 4 (count (:required-evidence sb)))
+        "an honestly-scoped catalog, matching the GNB-family precedent, not padded")))
+
+(deftest moz-has-cadastro-unico-sub-map
+  (testing "the flagship Cadastro Único mechanism is grounded and exposed as its own sub-map"
+    (let [cu (facts/cadastro-unico-spec-basis "MOZ")]
+      (is (some? cu))
+      (is (re-find #"Artigo 43" (:cadastro-unico-legal-basis cu)))
+      (is (re-find #"ufsa\.gov\.mz" (:cadastro-unico-provenance cu))))))
+
+(deftest moz-owner-authority-names-ufsa-and-current-decree
+  (testing "owner-authority/legal-basis cite UFSA and the CURRENT Decreto n.º 79/2022, not the superseded 2016 one"
+    (let [sb (facts/spec-basis "MOZ")]
+      (is (re-find #"UFSA" (:owner-authority sb)))
+      (is (re-find #"79/2022" (:legal-basis sb)))
+      (is (re-find #"79/2022" (:provenance sb))))))
+
+(deftest moz-national-spec-does-not-claim-transactional-eprocurement-portal
+  (testing "no verified national e-procurement TRANSACTIONAL portal was found -- must not invent one"
+    (let [sb (facts/spec-basis "MOZ")]
+      (is (re-find #"no dedicated national e-procurement" (:national-spec sb))))))
+
+(deftest unknown-jurisdiction-has-no-spec-basis
+  (is (nil? (facts/spec-basis "ATL")))
+  (is (nil? (facts/spec-basis "ZZZ"))))
+
+(deftest required-evidence-satisfied
+  (let [sb (facts/spec-basis "MOZ")
+        all (:required-evidence sb)]
+    (is (true? (facts/required-evidence-satisfied? "MOZ" all)))
+    (is (not (facts/required-evidence-satisfied? "MOZ" (take 1 all))))
+    (is (nil? (facts/required-evidence-satisfied? "ATL" all)))))
+
+(deftest coverage-is-honest
+  (let [c (facts/coverage ["MOZ" "ATL"])]
+    (is (= 2 (:requested c)))
+    (is (= 1 (:covered c)))
+    (is (= ["ATL"] (:missing-jurisdictions c)))))
