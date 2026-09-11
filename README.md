@@ -60,7 +60,7 @@ specific instrument naming APIEX as Lei n.º 8/2023's own Art. 22 §3/§4
 "competent entity") and honestly left out rather than invented.
 
 ```
-clojure -M:dev:test
+kbb -M:dev:test
 ```
 
 ## Culture catalog
