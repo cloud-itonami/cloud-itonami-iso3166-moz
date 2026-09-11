@@ -33,7 +33,7 @@ Governed public-sector market-entry compliance actor, same architecture as
   test grounded directly in Artigo 43 of the Regulamento's own text (UFSA
   maintains TWO distinct registries: eligible suppliers AND debarred
   suppliers).
-- `src/statute/facts.cljc` -- general-law catalog: Lei n.º 13/2023, de 25
+- `src/statute/facts.cljk` -- general-law catalog: Lei n.º 13/2023, de 25
   de Agosto (Lei do Trabalho, which this iteration confirmed directly from
   its own primary text revokes the prior Lei n.º 23/2007), Lei n.º 8/2023,
   de 9 de Junho (Lei de Investimento Privado, revokes Lei n.º 3/93), and
@@ -52,7 +52,7 @@ official site itself blocked automated fetches this session
 bot-detection page to every attempt, including WebFetch, which separately
 failed on a self-signed-certificate error), the Wayback Machine's most
 recent snapshot of that SAME official site's own content (not a
-third-party paraphrase) -- see `src/marketentry/facts.cljc`'s namespace
+third-party paraphrase) -- see `src/marketentry/facts.cljk`'s namespace
 docstring for the full research trail, including facts this iteration
 could NOT verify (a Conservatória do Registo das Entidades Legais (CREL)
 citation; the specific decree establishing the NUIT regime itself; the
@@ -71,7 +71,7 @@ Alongside the market-entry / statute catalogs, this repo carries a
 `com-junkawasaki/root`) — national dishes, protected products, beverages,
 crafts, festivals and heritage sites for Mozambique:
 
-- `src/culture/facts.cljc` — the catalog, source of truth (keyed by
+- `src/culture/facts.cljk` — the catalog, source of truth (keyed by
   uppercase ISO3, mirroring `statute.facts`).
 - `schema/culture.edn` — DataScript schema.
 - `data/culture-tx.edn` — derived DataScript tx-data (regenerated from

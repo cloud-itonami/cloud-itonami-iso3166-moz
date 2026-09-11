@@ -65,7 +65,7 @@ itself this session:
   designation to — this catalog cites APIEX's own self-description
   rather than assert the base Law names APIEX by name.
 
-See `src/marketentry/facts.cljc` and `src/statute/facts.cljc` for the
+See `src/marketentry/facts.cljk` and `src/statute/facts.cljk` for the
 full catalog entries and their docstrings, which are the single source
 of truth for every regulatory claim this actor makes.
 
