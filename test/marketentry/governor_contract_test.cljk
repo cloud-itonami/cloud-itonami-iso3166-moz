@@ -19,7 +19,7 @@
   TWO-condition test (missing registration OR active debarment),
   reflecting the Regulamento's own two-registry (eligible + Impedidos)
   design."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [langgraph.graph :as g]
             [marketentry.store :as store]
             [marketentry.operation :as op]))
